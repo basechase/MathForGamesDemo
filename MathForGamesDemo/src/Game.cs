@@ -27,7 +27,7 @@ namespace MathForGamesDemo
 
             // Scene 
             Scene testScene = new Scene();
-
+            testScene.Start();
 
             while (!Raylib.WindowShouldClose())
             {
@@ -49,7 +49,11 @@ namespace MathForGamesDemo
 
 
                 Console.WriteLine(deltaTime);
+
+
             }
+
+            testScene.End();
 
             Raylib.CloseWindow();
         }

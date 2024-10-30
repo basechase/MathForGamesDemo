@@ -9,5 +9,27 @@ namespace MathForGamesDemo
     internal class Actor
     {
 
+        private bool _started = false;
+
+        public bool Started { get => _started; }
+
+
+        public virtual void Start()
+        {
+            _started = true;
+            
+        }
+
+        public virtual void Update(double deltaTime)
+        {
+            
+        }
+
+        public virtual void End()
+        {
+
+        }
+
+
     }
 }
