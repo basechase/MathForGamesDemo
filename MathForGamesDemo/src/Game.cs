@@ -11,6 +11,75 @@ namespace MathForGamesDemo
 {
     internal class Game
     {
+        private static List<Scene> _scenes;
+
+        private static Scene _currentScene;
+
+        public static Scene CurrentScene 
+        { 
+
+            get => _currentScene;
+            set
+            {
+
+                if(_currentScene != null)
+                {
+                _currentScene.End();
+                }
+
+
+                _currentScene = value;
+                _currentScene.Start();
+            }
+        
+        
+        }
+
+        public Game()
+        {
+            _scenes = new List<Scene>();
+            //add starting scene
+            AddScene(new Scene());
+        }
+
+        public static void AddScene(Scene scene)
+        {
+            if (!_scenes.Contains(scene))
+            {
+                _scenes.Add(scene);
+            }
+
+            if(_currentScene == null)
+            {
+                CurrentScene = scene;
+            }
+        }
+
+        public static bool RemoveScene(Scene scene)
+        {
+
+            bool removed = _scenes.Remove(scene);
+
+            if (_currentScene == scene)
+            {
+                CurrentScene = GetScene(0);
+            }
+
+            return removed;
+
+        }
+
+
+
+        public static Scene GetScene(int index)
+        {
+            if (_scenes.Count <= 0 || _scenes.Count <= index || index < 0)
+            {
+                return null;
+            }
+
+            return _scenes[index];
+        }
 
         public void Run()
         {
@@ -25,9 +94,8 @@ namespace MathForGamesDemo
             int fps = 1;
             int frameCount = 0;
 
-            // Scene 
-            Scene testScene = new Scene();
-            testScene.Start();
+
+            
 
             while (!Raylib.WindowShouldClose())
             {
@@ -40,7 +108,7 @@ namespace MathForGamesDemo
                 Raylib.BeginDrawing();
                 Raylib.ClearBackground(Color.White);
 
-                testScene.Update(deltaTime);
+                CurrentScene.Update(deltaTime);
 
                 Raylib.EndDrawing();
 
@@ -53,7 +121,7 @@ namespace MathForGamesDemo
 
             }
 
-            testScene.End();
+            CurrentScene.End();
 
             Raylib.CloseWindow();
         }

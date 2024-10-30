@@ -8,10 +8,16 @@ namespace MathForGamesDemo
 {
     internal class Actor
     {
+        
+
 
         private bool _started = false;
 
         public bool Started { get => _started; }
+
+
+        public Transform2D transform { get; set; }
+
 
 
         public virtual void Start()

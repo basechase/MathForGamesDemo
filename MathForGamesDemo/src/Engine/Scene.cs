@@ -11,9 +11,7 @@ namespace MathForGamesDemo
     {
         private List<Actor> _actors;
 
-        private static Scene _currentScene;
-
-        public static Scene CurrentScene { get => _currentScene; }
+       
 
 
 
@@ -35,11 +33,7 @@ namespace MathForGamesDemo
 
         public virtual void Start()
         {
-            if(_currentScene == null)
-            {
-                _currentScene = this;
-                
-            }
+         
 
             _actors = new List<Actor>();    
         }
