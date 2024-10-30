@@ -15,7 +15,7 @@ namespace MathForGamesDemo
         public override void Update(double deltaTime)
         {
             base.Update(deltaTime);
-
+            
             Vector2 movementInput = new Vector2();
             
        
