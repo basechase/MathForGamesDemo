@@ -16,7 +16,7 @@ namespace MathForGamesDemo
         public bool Started { get => _started; }
 
 
-        public Transform2D transform { get; set; }
+        public Transform2D Transform { get; set; }
 
 
 
