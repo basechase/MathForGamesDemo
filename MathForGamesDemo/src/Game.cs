@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,8 @@ namespace MathForGamesDemo
 {
     internal class Game
     {
+
+
         private static List<Scene> _scenes;
 
         private static Scene _currentScene;
@@ -38,8 +41,7 @@ namespace MathForGamesDemo
         public Game()
         {
             _scenes = new List<Scene>();
-            //add starting scene
-            AddScene(new Scene());
+         
         }
 
         public static void AddScene(Scene scene)
@@ -54,6 +56,18 @@ namespace MathForGamesDemo
                 CurrentScene = scene;
             }
         }
+
+        public static Scene GetScene(int index)
+        {
+            if (_scenes.Count <= 0 || _scenes.Count <= index || index < 0)
+            {
+                return null;
+            }
+
+            return _scenes[index];
+        }
+       
+
 
         public static bool RemoveScene(Scene scene)
         {
@@ -71,15 +85,6 @@ namespace MathForGamesDemo
 
 
 
-        public static Scene GetScene(int index)
-        {
-            if (_scenes.Count <= 0 || _scenes.Count <= index || index < 0)
-            {
-                return null;
-            }
-
-            return _scenes[index];
-        }
 
         public void Run()
         {
@@ -91,8 +96,9 @@ namespace MathForGamesDemo
             long currentTime= 0;
             double deltaTime = 1;
             long lastTime = 0;
-            int fps = 1;
-            int frameCount = 0;
+     
+            Scene testScene = new TestScene();
+            AddScene(testScene);    
 
 
             

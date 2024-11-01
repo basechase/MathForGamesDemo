@@ -12,10 +12,13 @@ namespace MathForGamesDemo
         {
             base.Start();
 
-        // add our cool actor
-        Actor actor = new TestActor();
-            actor.Transform.LocalPosition = new Vector2(200, 200);
+            // add our cool actor
+            Actor actor = new TestActor();
+            actor.Transform.LocalPosition = new Vector2(200,200);
             AddActor(actor);
+
+
+       
 
         }
 

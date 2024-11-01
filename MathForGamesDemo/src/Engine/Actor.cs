@@ -18,13 +18,17 @@ namespace MathForGamesDemo
 
         public Transform2D Transform { get; set; }
 
-
+        public Actor() 
+        {
+            Transform = new Transform2D(this);
+        }
 
         public virtual void Start()
         {
             _started = true;
-            
+            Transform = new Transform2D(this);
         }
+
 
         public virtual void Update(double deltaTime)
         {

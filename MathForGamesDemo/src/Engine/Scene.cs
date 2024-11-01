@@ -11,8 +11,7 @@ namespace MathForGamesDemo
     {
         private List<Actor> _actors;
 
-       
-
+     
 
 
         public void AddActor(Actor actor)
