@@ -39,7 +39,7 @@ namespace MathForGamesDemo
         public override void Update(double deltaTime)
         {
             base.Update(deltaTime);
-            Raylib.DrawCircleV(_theBoi.Transform.GlobalPosition, 50, Color.Green);
+            Raylib.DrawCircleV(_theBoi.Transform.GlobalPosition, 100, Color.Green);
         }
 
     }
