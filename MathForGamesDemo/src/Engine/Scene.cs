@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.ExceptionServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -48,7 +49,33 @@ namespace MathForGamesDemo
                     actor.Start();
 
                 actor.Update(deltaTime);
+
+                if (actor.Collider != null)
+                {
+                    actor.Collider.Draw();
+                }
             }
+
+            // check for collision
+
+            for (int row = 0; row < _actors.Count; row++)
+            {
+                for (int column = row; column < _actors.Count; column++)
+                {
+                    //if both cikkuders are valid
+                    if (row == column)
+                    {
+                        continue;
+                    }
+                   //check collision
+                    if (_actors[row].Collider != null && _actors[column].Collider != null)  
+                    {
+                        _actors[row].OnCollision(_actors[column]);
+                        _actors[column].OnCollision(_actors[row]);
+                    }
+                }
+            }
+
 
         }
 
