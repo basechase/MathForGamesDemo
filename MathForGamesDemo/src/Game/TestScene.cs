@@ -22,7 +22,7 @@ namespace MathForGamesDemo
             Actor actor = new TestActor();
             actor.Transform.LocalPosition = new Vector2(200,200);
             AddActor(actor);
-            actor.Collider = new CircleCollider(actor, 60);
+            actor.Collider = new CircleCollider(actor, 50);
 
 
             _theBoi = Actor.Instantiate(new Actor("the Boi"), null, new Vector2(100, 100), 0);
@@ -39,7 +39,7 @@ namespace MathForGamesDemo
         public override void Update(double deltaTime)
         {
             base.Update(deltaTime);
-            Raylib.DrawCircleV(_theBoi.Transform.GlobalPosition, 100, Color.Green);
+            Raylib.DrawCircleV(_theBoi.Transform.GlobalPosition, 50, Color.Black);
         }
 
     }

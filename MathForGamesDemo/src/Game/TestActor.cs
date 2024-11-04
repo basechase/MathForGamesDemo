@@ -47,7 +47,7 @@ namespace MathForGamesDemo
 
         public override void OnCollision(Actor other)
         {
-            _color = Color.Red;
+            _color = Color.Orange;
         }
 
     }
