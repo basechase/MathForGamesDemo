@@ -70,8 +70,12 @@ namespace MathForGamesDemo
                    //check collision
                     if (_actors[row].Collider != null && _actors[column].Collider != null)  
                     {
+                        if (_actors[row].Collider.CheckCollision(_actors[column]))
+                        {
+
                         _actors[row].OnCollision(_actors[column]);
                         _actors[column].OnCollision(_actors[row]);
+                        }
                     }
                 }
             }
