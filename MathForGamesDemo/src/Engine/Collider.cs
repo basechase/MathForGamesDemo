@@ -19,7 +19,7 @@ namespace MathForGamesDemo
 
         public bool CheckCollision(Actor other)
         {
-            if (other.Collider == null && other.Collider is CircleCollider)
+            if (other.Collider != null && other.Collider is CircleCollider)
             {
                 
                 return CheckCollisionCircle((CircleCollider)other.Collider);

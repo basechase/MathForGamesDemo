@@ -99,7 +99,6 @@ namespace MathForGamesDemo
         }
 
 
-
         public Vector2 Forward
         {
             get { return new Vector2(_globalMatrix.m00, _globalMatrix.m10).Normalized; }
@@ -119,6 +118,9 @@ namespace MathForGamesDemo
         {
             get { return (float)Math.Atan2(_globalMatrix.m01, _globalMatrix.m00); }
         }
+
+        public Transform2D[] Children { get => _children; }
+        public Transform2D Parent { get => _parent;}
 
         public Transform2D(Actor owner)
         {
