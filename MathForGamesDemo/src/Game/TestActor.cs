@@ -23,7 +23,7 @@ namespace MathForGamesDemo
             base.Update(deltaTime);
 
           
-
+            // osu + 2D shooter?
 
             //movement
             Vector2 movementInput = new Vector2();
