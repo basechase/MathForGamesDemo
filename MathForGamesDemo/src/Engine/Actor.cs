@@ -60,6 +60,7 @@ namespace MathForGamesDemo
         {
             Name = name;
             Transform = new Transform2D(this);
+            _components = new Component[0]; 
         }
 
         public static Actor Instantiate(
@@ -140,5 +141,17 @@ namespace MathForGamesDemo
         {
         
         }
+
+
+
+
+
+        //add component
+
+        //remove component
+
+        //get component
+
+        //get components
     }
 }
