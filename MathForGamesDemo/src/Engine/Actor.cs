@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MathForGamesDemo;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -41,13 +42,13 @@ namespace MathForGamesDemo
                     }
 
                 }
-            }     
-            
-        }     
+            }
+
+        }
 
 
 
-        public Collider Collider { get;  set; }
+        public Collider Collider { get; set; }
 
         public bool Started { get => _started; }
 
@@ -60,7 +61,7 @@ namespace MathForGamesDemo
         {
             Name = name;
             Transform = new Transform2D(this);
-            _components = new Component[0]; 
+            _components = new Component[0];
         }
 
         public static Actor Instantiate(
@@ -92,7 +93,7 @@ namespace MathForGamesDemo
             return actor;
         }
 
-        public static void Destroy (Actor actor)
+        public static void Destroy(Actor actor)
         {
             //remove all children
             foreach (Transform2D child in actor.Transform.Children)
@@ -100,7 +101,7 @@ namespace MathForGamesDemo
                 actor.Transform.RemoveChild(child);
             }
             //unchild from parent
-            if (actor.Transform.Parent !=null)
+            if (actor.Transform.Parent != null)
             {
                 actor.Transform.Parent.RemoveChild(actor.Transform);
             }
@@ -124,22 +125,34 @@ namespace MathForGamesDemo
         public virtual void Start()
         {
             _started = true;
-            
+
         }
 
 
         public virtual void Update(double deltaTime)
         {
-            
+            foreach (Component component in _components)
+            {
+                if (!component.Started)
+                {
+                    component.Start();
+                }
+
+                component.Update(deltaTime);
+            }
+                
         }
 
         public virtual void End()
         {
-
+            foreach (Component component in _components)
+            {
+                component.End();
+            }
         }
-        public virtual void OnCollision(Actor other) 
+        public virtual void OnCollision(Actor other)
         {
-        
+
         }
 
 
@@ -147,11 +160,134 @@ namespace MathForGamesDemo
 
 
         //add component
+        public T AddComponent<T>(T component) where T : Component
+        {
+            //create temp array, one bigger than _components, need the extra slot
+
+            Component[] temp = new Component[_components.Length + 1];
+
+            //deep copy components into temp
+
+            for (int i = 0; i < _components.Length; i++)
+            {
+                temp[i] = _components[i];
+            }
+
+
+            //set last index in temp to component we wish to add
+
+            temp[temp.Length - 1] = component;
+
+            //store tmep in _componenetss
+            _components = temp;
+
+
+            return component;
+        }
+
+
+
+
+        public T AddComponent<T>() where T : Component
+        {
+            T component = (T)new Component(this);
+            return AddComponent<T>(component);
+        }
 
         //remove component
 
-        //get component
+        public bool RemoveComponent<T>(T component) where T : Component
+        {
 
+            //edge case for empty component array
+            if (_components.Length <= 0)
+            {
+                return false;
+
+
+            }
+            //edge case for only one compoinent
+            if (_components.Length == 1 && _components[0] == component)
+            {
+                _components = new Component[0];
+                return true;
+            }
+            //create temp array one smaller than _components
+            Component[] temp = new Component[_components.Length - 1];
+            bool componentRemoved = false;
+
+            // deep copy _components into tempo minus the one componenet
+
+            int j = 0;
+
+            for (int i = 0; j < _components.Length; i++)
+            {
+                if (_components[i] != component)
+                {
+                    temp[j] = _components[i];
+                }
+                else
+                {
+                    componentRemoved = true;
+                }
+            }
+            if (componentRemoved)
+            {
+                _components = temp;
+            }
+            return componentRemoved;
+        }
+
+
+        public bool RemoveComponent<T>() where T : Component
+        {
+            T component = GetComponent<T>();
+            if (component != null)
+            {
+                return RemoveComponent(component);
+            }
+                return false;
+        }
+
+
+        //get component
+        public T GetComponent<T>() where T : Component
+        {
+            foreach (Component component in _components)
+            {
+                if (component is T)
+                {
+                    return (T)component;
+                }
+
+            }
+            return null;
+        }
         //get components
+
+        public T[] GetComponents<T>() where T : Component
+        {
+            //create an array same size as componenets
+            T[] temp = new T[_components.Length];
+
+            //copy all elements that are of type T into temp
+            int count = 0;
+            for (int i = 0; i < _components.Length; i++)
+            {
+                if (_components[i] is T)
+                {
+                    temp[count] = (T)_components[i];
+                    count++;
+                }
+            }
+            //trim the array
+            T[] result = new T[count];
+            for (int i = 0; i < count; i++)
+            {
+                result[i] = temp[i];
+            }
+
+            return result;
+        }
     }
 }
