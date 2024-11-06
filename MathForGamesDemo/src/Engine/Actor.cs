@@ -3,10 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
-
+using MathLibrary;
 namespace MathForGamesDemo
 {
     internal class Actor
@@ -188,10 +187,11 @@ namespace MathForGamesDemo
 
 
 
-        public T AddComponent<T>() where T : Component
+        public T AddComponent<T>() where T : Component, new()
         {
             T component = (T)new Component(this);
-            return AddComponent<T>(component);
+            component.Owner = this;
+            return AddComponent(component);
         }
 
         //remove component
@@ -233,6 +233,7 @@ namespace MathForGamesDemo
             }
             if (componentRemoved)
             {
+                component.End();
                 _components = temp;
             }
             return componentRemoved;

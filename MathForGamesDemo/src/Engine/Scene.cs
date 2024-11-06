@@ -34,8 +34,9 @@ namespace MathForGamesDemo
         public virtual void Start()
         {
          
-
-            _actors = new List<Actor>();    
+                _actors = new List<Actor>();
+          //  Actor bob = new Actor("Bob");
+            //bob.AddComponent<SpriteComponent>();
         }
 
 
