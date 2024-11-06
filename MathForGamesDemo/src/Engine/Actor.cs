@@ -16,6 +16,8 @@ namespace MathForGamesDemo
         private bool _started = false;
         private bool _enabled = true;
 
+        private Component[] _components;
+
         public bool Enabled
         {
             get => _enabled;
