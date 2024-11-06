@@ -13,10 +13,10 @@ namespace MathForGamesDemo
 
 
 
-        public float CollisioRadius {  get; set; }
+        public float CollisionRadius {  get; set; }
         public CircleCollider(Actor owner, float radius) : base(owner)
         {
-            CollisioRadius = radius;
+            CollisionRadius = radius;
         }
 
 
@@ -24,7 +24,7 @@ namespace MathForGamesDemo
 
         public override bool CheckCollisionCircle(CircleCollider collider)
         {
-            float sunRadii = collider.CollisioRadius + CollisioRadius;
+            float sunRadii = collider.CollisionRadius + CollisionRadius;
             float distance = Vector2.Distance(collider.Owner.Transform.GlobalPosition, Owner.Transform.GlobalPosition);
             
 
@@ -34,7 +34,7 @@ namespace MathForGamesDemo
         public override void Draw()
         {
             base.Draw();
-            Raylib.DrawCircleLinesV(Owner.Transform.GlobalPosition, CollisioRadius, Color.Green);
+            Raylib.DrawCircleLinesV(Owner.Transform.GlobalPosition, CollisionRadius, Color.Green);
         }
 
     }
