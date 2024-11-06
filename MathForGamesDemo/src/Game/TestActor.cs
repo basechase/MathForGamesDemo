@@ -49,7 +49,7 @@ namespace MathForGamesDemo
 
         public override void OnCollision(Actor other)
         {
-            Actor.Destroy(this);
+            
             _color = Color.Pink;
         }
 
