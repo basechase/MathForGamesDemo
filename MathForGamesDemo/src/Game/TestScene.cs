@@ -27,6 +27,7 @@ namespace MathForGamesDemo
 
             _theBoi = Actor.Instantiate(new Actor("the Boi"), null, new Vector2(300, 300), 0);
             _theBoi.Collider = new CircleCollider(_theBoi, 50);
+
                 
 
             
@@ -38,6 +39,7 @@ namespace MathForGamesDemo
 
         public override void Update(double deltaTime)
         {
+            
             base.Update(deltaTime);
             Raylib.DrawCircleV(_theBoi.Transform.GlobalPosition, 50, Color.Black);
         }

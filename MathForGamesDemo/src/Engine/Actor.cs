@@ -144,6 +144,7 @@ namespace MathForGamesDemo
 
         public virtual void End()
         {
+
             foreach (Component component in _components)
             {
                 component.End();

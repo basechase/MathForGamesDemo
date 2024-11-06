@@ -33,6 +33,8 @@ namespace MathForGamesDemo
             movementInput.x += Raylib.IsKeyDown(KeyboardKey.D);
 
 
+
+
             Vector2 deltamovement = movementInput.Normalized * Speed * (float)deltaTime;
 
             if (deltamovement.Magnitude != 0)
@@ -47,6 +49,7 @@ namespace MathForGamesDemo
 
         public override void OnCollision(Actor other)
         {
+            Actor.Destroy(this);
             _color = Color.Pink;
         }
 
