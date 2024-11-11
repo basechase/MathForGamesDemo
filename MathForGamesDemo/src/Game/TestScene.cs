@@ -27,13 +27,25 @@ namespace MathForGamesDemo
 
 
 
-            _theBoi = Actor.Instantiate(new Actor("cirlce 1"), null, new Vector2(300, 300), 0);
+            _theBoi = Actor.Instantiate(new Actor("circle 1"), null, new Vector2(300, 300), 0);
             _theBoi.Collider = new CircleCollider(_theBoi, 50);
 
            
                 
 
             
+
+            Component comp1 = _theBoi.AddComponent(new SpriteComponent(_theBoi, "1"));
+            Component comp2 = _theBoi.AddComponent(new SpriteComponent(_theBoi, "2"));
+            Component comp3 = _theBoi.AddComponent(new SpriteComponent(_theBoi, "3"));
+            Component comp4 = _theBoi.AddComponent(new SpriteComponent(_theBoi, "4"));
+
+
+
+            _theBoi.RemoveComponent(comp1);
+            _theBoi.RemoveComponent(comp2);
+            _theBoi.RemoveComponent(comp3);
+            _theBoi.RemoveComponent(comp4);
 
        
 
