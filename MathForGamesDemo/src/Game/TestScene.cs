@@ -42,10 +42,10 @@ namespace MathForGamesDemo
 
 
 
-            _theBoi.RemoveComponent(comp1);
+            
             _theBoi.RemoveComponent(comp2);
             _theBoi.RemoveComponent(comp3);
-            _theBoi.RemoveComponent(comp4);
+            
 
        
 

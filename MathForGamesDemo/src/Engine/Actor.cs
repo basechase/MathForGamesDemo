@@ -360,20 +360,20 @@ namespace MathForGamesDemo
 
         private void RemoveComponentsToBeRemoved()
         {
+            if (_componentsToRemove.Length <= 0)
+            {
+                return;
+            }
             //create temp array for _components 
             Component[] tempComponents = new Component[_components.Length];
-            //create temp array for _componentsToRemove
-            Component[] tempComponentsToRemove = new Component[_componentsToRemove.Length];
+            
 
-
-
-
-          
 
             //deep copy the array, removing the elements in _componentsToRemove
             int j = 0;
             for (int i = 0; i < _components.Length; i++)
             {
+                //loop through components to remove and check if any of them is equal to this one
                 bool removed = false;
                foreach(Component component in _componentsToRemove)
                 {
@@ -396,7 +396,7 @@ namespace MathForGamesDemo
             //trim the array
 
             Component[] result = new Component[_components.Length - _componentsToRemove.Length];
-            for (int i = 0; i <= result.Length; i++)
+            for (int i = 0; i < result.Length; i++)
             {
                 result[i] = tempComponents[i];
             }
