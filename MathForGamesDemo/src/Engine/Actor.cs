@@ -231,7 +231,7 @@ namespace MathForGamesDemo
                     //add component to _componentsToRemove
 
                     AddComponentToRemove(comp);
-
+ 
 
                     return true;
                 }
@@ -395,7 +395,8 @@ namespace MathForGamesDemo
             }
             //trim the array
 
-            Component[] result = new Component[_components.Length - _componentsToRemove.Length];
+            int newLength = Math.Max(0, _components.Length - _componentsToRemove.Length);
+            Component[] result = new Component[newLength];
             for (int i = 0; i < result.Length; i++)
             {
                 result[i] = tempComponents[i];
