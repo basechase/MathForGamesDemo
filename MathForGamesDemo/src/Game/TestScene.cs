@@ -12,6 +12,7 @@ namespace MathForGamesDemo
     internal class TestScene : Scene
     {
     Actor _theBoi;
+    Actor _paddle2;
 
 
         public override void Start()
@@ -22,8 +23,21 @@ namespace MathForGamesDemo
             Actor actor = new TestActor();
             actor.Transform.LocalPosition = new Vector2(300,100);
             AddActor(actor);
+
+
+
+            //paddle 2
+
+
+            Actor paddle2 = new TestActor();
+            paddle2.Transform.LocalPosition = new Vector2(750 , 100);
+            AddActor(paddle2);
+
+
             actor.Collider = new CircleCollider(actor, 50);
 
+
+            _paddle2 = Actor.Instantiate(new Actor("paddle2"), null, new Vector2( 750,100 ), 0);
 
 
 
@@ -35,16 +49,14 @@ namespace MathForGamesDemo
 
             
 
-            Component comp1 = _theBoi.AddComponent(new SpriteComponent(_theBoi, "1"));
-            Component comp2 = _theBoi.AddComponent(new SpriteComponent(_theBoi, "2"));
-            Component comp3 = _theBoi.AddComponent(new SpriteComponent(_theBoi, "3"));
-            Component comp4 = _theBoi.AddComponent(new SpriteComponent(_theBoi, "4"));
+
+
+          
 
 
 
             
-            _theBoi.RemoveComponent(comp2);
-            _theBoi.RemoveComponent(comp3);
+         
             
 
        
@@ -56,7 +68,7 @@ namespace MathForGamesDemo
         {
             
             base.Update(deltaTime);
-            Raylib.DrawCircleV(_theBoi.Transform.GlobalPosition, 50, Color.Black);
+            
         }
 
     }
