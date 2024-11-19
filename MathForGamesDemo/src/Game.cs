@@ -112,7 +112,7 @@ namespace MathForGamesDemo
 
 
                 Raylib.BeginDrawing();
-                Raylib.ClearBackground(Color.White);
+                Raylib.ClearBackground(Color.Black);
 
                 CurrentScene.Update(deltaTime);
 

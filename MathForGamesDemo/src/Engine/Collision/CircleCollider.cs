@@ -33,7 +33,7 @@ namespace MathForGamesDemo
 
         public override void Draw()
         {
-            base.Draw();
+            base.Draw();  
             Raylib.DrawCircleLinesV(Owner.Transform.GlobalPosition, CollisionRadius, Color.Green);
         }
 
