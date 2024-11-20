@@ -15,7 +15,7 @@ namespace MathForGamesDemo
     {
     Actor _paddle1;
     Actor _paddle2;
-        Actor _ball;
+     Actor _ball;
 
         public override void Start()
         {

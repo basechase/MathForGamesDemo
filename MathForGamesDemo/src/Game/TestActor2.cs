@@ -27,7 +27,7 @@ namespace MathForGamesDemo
 
             //movement
             if (Raylib.IsKeyPressed(KeyboardKey.W))
-                movementInput.y -= Speed; // Adjusted to constant input for normalization
+                movementInput.y -= Speed; 
             
             if (Raylib.IsKeyPressed(KeyboardKey.S))
                 movementInput.y += Speed;
@@ -48,7 +48,7 @@ namespace MathForGamesDemo
 
         public override void OnCollision(Actor other)
         {
-
+            
 
         }
 

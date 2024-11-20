@@ -30,7 +30,7 @@ namespace MathForGamesDemo
 
             //movement
             if (Raylib.IsKeyPressed(KeyboardKey.Up))
-                movementInput.y -= Speed; // Adjusted to constant input for normalization
+                movementInput.y -= Speed; 
             
             if (Raylib.IsKeyPressed(KeyboardKey.Down))
                 movementInput.y += Speed;
