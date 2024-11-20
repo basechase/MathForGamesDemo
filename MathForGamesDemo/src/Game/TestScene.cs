@@ -37,19 +37,21 @@ namespace MathForGamesDemo
             AddActor(_paddle2);
 
 
+
+
             _paddle1.Collider = new CircleCollider(_paddle1, 50);
 
             _paddle2.Collider = new CircleCollider(_paddle2, 50);
-            _ball.Collider = new CircleCollider(_ball, 50);
 
-
-
-            _ball = Actor.Instantiate(new Actor("ball"), null, new Vector2(700, 50), 0);
+            _ball = Actor.Instantiate(new Actor("ball"), null, new Vector2(400, 500), 0);
             _paddle2 = Actor.Instantiate(new Actor("paddle 2"), null, new Vector2(700, 50), 0);
             _paddle1 = Actor.Instantiate(new Actor("circle 1"), null, new Vector2(300, 50), 0);
             
 
            
+
+
+            
                 
 
             

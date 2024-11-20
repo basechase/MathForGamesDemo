@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MathForGamesDemo.MathForGamesDemo;
 using MathLibrary;
 using Raylib_cs;
 
@@ -27,7 +28,7 @@ namespace MathForGamesDemo
             //movement
             if (Raylib.IsKeyPressed(KeyboardKey.W))
                 movementInput.y -= Speed; // Adjusted to constant input for normalization
-
+            
             if (Raylib.IsKeyPressed(KeyboardKey.S))
                 movementInput.y += Speed;
 
@@ -38,7 +39,7 @@ namespace MathForGamesDemo
             {
                 Transform.LocalPosition += (deltaMovement);
             }
-            Raylib.DrawRectangleV(Transform.GlobalPosition + new Vector2(100, 50), Transform.GlobalScale * -100, Color.Blue);
+            Raylib.DrawRectangleV(Transform.GlobalPosition + new Vector2(100, 50), Transform.GlobalScale * -100, _color);
 
 
         }

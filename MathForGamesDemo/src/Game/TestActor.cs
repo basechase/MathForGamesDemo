@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using MathForGamesDemo.MathForGamesDemo;
 using MathLibrary;
 using Raylib_cs;
 
@@ -30,7 +31,7 @@ namespace MathForGamesDemo
             //movement
             if (Raylib.IsKeyPressed(KeyboardKey.Up))
                 movementInput.y -= Speed; // Adjusted to constant input for normalization
-
+            
             if (Raylib.IsKeyPressed(KeyboardKey.Down))
                 movementInput.y += Speed;
 

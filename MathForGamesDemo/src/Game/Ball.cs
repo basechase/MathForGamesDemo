@@ -58,7 +58,7 @@ namespace MathForGamesDemo
             public override void OnCollision(Actor other)
             {
 
-
+                _ballPos.x = -_ballPos.x;
 
 
 
