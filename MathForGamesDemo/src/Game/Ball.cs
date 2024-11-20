@@ -9,8 +9,6 @@ using Raylib_cs;
 
 namespace MathForGamesDemo
 {
-    namespace MathForGamesDemo
-    {
         internal class Ball : Actor
         {
             // deja was here 
@@ -76,4 +74,3 @@ namespace MathForGamesDemo
         }
     }
 
-}
