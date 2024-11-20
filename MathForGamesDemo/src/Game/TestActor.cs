@@ -28,10 +28,10 @@ namespace MathForGamesDemo
           
 
             //movement
-            if (Raylib.IsKeyPressed(KeyboardKey.W))
+            if (Raylib.IsKeyPressed(KeyboardKey.Up))
                 movementInput.y -= Speed; // Adjusted to constant input for normalization
 
-            if (Raylib.IsKeyPressed(KeyboardKey.S))
+            if (Raylib.IsKeyPressed(KeyboardKey.Down))
                 movementInput.y += Speed;
 
 
@@ -41,7 +41,7 @@ namespace MathForGamesDemo
             {
                 Transform.LocalPosition += (deltaMovement);
             }
-            Raylib.DrawRectangleV(Transform.GlobalPosition, Transform.GlobalScale * 100, Color.Blue);
+            Raylib.DrawRectangleV(Transform.GlobalPosition + new Vector2(0,50), Transform.GlobalScale *-100, Color.Blue);
 
 
         }

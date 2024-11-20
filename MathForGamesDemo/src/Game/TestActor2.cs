@@ -38,7 +38,7 @@ namespace MathForGamesDemo
             {
                 Transform.LocalPosition += (deltaMovement);
             }
-            Raylib.DrawRectangleV(Transform.GlobalPosition, Transform.GlobalScale * 100, Color.Blue);
+            Raylib.DrawRectangleV(Transform.GlobalPosition + new Vector2(100, 50), Transform.GlobalScale * -100, Color.Blue);
 
 
         }
