@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MathForGamesDemo.MathForGamesDemo;
+using MathForGamesDemo;
 using MathLibrary;
 using Raylib_cs;
 
@@ -25,12 +25,7 @@ namespace MathForGamesDemo
 
 
 
-            //movement
-            if (Raylib.IsKeyPressed(KeyboardKey.W))
-                movementInput.y -= Speed; 
-            
-            if (Raylib.IsKeyPressed(KeyboardKey.S))
-                movementInput.y += Speed;
+          
 
 
 
@@ -48,7 +43,8 @@ namespace MathForGamesDemo
 
         public override void OnCollision(Actor other)
         {
-            
+            Tank.CollisionCount++;
+            Actor.Destroy(this);
 
         }
 

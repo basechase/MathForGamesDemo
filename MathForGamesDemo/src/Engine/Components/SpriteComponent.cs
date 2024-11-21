@@ -32,7 +32,7 @@ namespace MathForGamesDemo
         {
 
             base.Update(deltaTime);
-            Vector2 offset = new Vector2(_texture.Width / 2, _texture.Height);
+            Vector2 offset = new Vector2(_texture.Width  /2, _texture.Height/2);
             Raylib.DrawTextureV(_texture, Owner.Transform.GlobalPosition - offset, Color.White);
         }
 

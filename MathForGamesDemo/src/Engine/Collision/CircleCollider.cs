@@ -11,11 +11,16 @@ namespace MathForGamesDemo
     internal class CircleCollider : Collider
     {
 
-
+        
 
         public float CollisionRadius {  get; set; }
+        public float Path {  get; set; }
+        
+
+        private int count;
         public CircleCollider(Actor owner, float radius) : base(owner)
         {
+            
             CollisionRadius = radius;
         }
 
@@ -27,14 +32,18 @@ namespace MathForGamesDemo
             float sumRadii = collider.CollisionRadius + CollisionRadius;
             float distance = Vector2.Distance(collider.Owner.Transform.GlobalPosition, Owner.Transform.GlobalPosition);
             
+            
 
             return sumRadii >= distance;
+
         }
 
         public override void Draw()
         {
-            base.Draw();  
+            base.Draw();
+      
             Raylib.DrawCircleLinesV(Owner.Transform.GlobalPosition, CollisionRadius, Color.Green);
+           
         }
 
     }

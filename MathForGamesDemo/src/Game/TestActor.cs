@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-using MathForGamesDemo.MathForGamesDemo;
+using MathForGamesDemo;
 using MathLibrary;
 using Raylib_cs;
 
@@ -14,10 +14,11 @@ namespace MathForGamesDemo
 {
     internal class TestActor : Actor
     {
+       
         public float Speed { get; set; } = 50;
 
        private Color _color = Color.White;
-
+        
        private Vector2 movementInput = new Vector2();
 
         public override void Update(double deltaTime)
@@ -28,22 +29,12 @@ namespace MathForGamesDemo
           
           
 
-            //movement
-            if (Raylib.IsKeyPressed(KeyboardKey.Up))
-                movementInput.y -= Speed; 
-            
-            if (Raylib.IsKeyPressed(KeyboardKey.Down))
-                movementInput.y += Speed;
+       
 
 
 
 
-            if (deltaMovement.Magnitude != 0)
-            {
-                Transform.LocalPosition += (deltaMovement);
-            }
-            Raylib.DrawRectangleV(Transform.GlobalPosition + new Vector2(0,50), Transform.GlobalScale *-100, Color.Blue);
-
+           
 
         }
 
@@ -51,8 +42,8 @@ namespace MathForGamesDemo
 
         public override void OnCollision(Actor other)
         {
-            
-            
+            Tank.CollisionCount++;
+            Actor.Destroy(this);
         }
 
     }

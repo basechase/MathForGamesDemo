@@ -66,7 +66,6 @@ namespace MathForGamesDemo
 
             return _scenes[index];
         }
-       
 
 
         public static bool RemoveScene(Scene scene)
@@ -88,7 +87,9 @@ namespace MathForGamesDemo
 
         public void Run()
         {
+       
             Raylib.InitWindow(800, 480, "Hello World");
+            
 
             // timing stuff
             Stopwatch stopwatch = new Stopwatch();
