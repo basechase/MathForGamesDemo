@@ -22,55 +22,53 @@ namespace MathForGamesDemo
 
         public override void Update(double deltaTime)
         {
+            // Call base Update
+            base.Update(deltaTime);
 
-            // Handle rotation input
+            // rotation 
             if (Raylib.IsKeyDown(KeyboardKey.A))
                 rotation -= RotationSpeed * (float)deltaTime; // Rotate counterclockwise
 
             if (Raylib.IsKeyDown(KeyboardKey.D))
                 rotation += RotationSpeed * (float)deltaTime; // Rotate clockwise
 
-            // Calculate the forward vector from rotation
+            // forward vector from rotation
             Vector2 forward = new Vector2(
                 MathF.Cos(rotation),
                 MathF.Sin(rotation)
             );
 
-            // Reset movement input
+            // reset movement input
             movementInput = new Vector2();
 
-            // Handle forward/backward movement
+            // forward/backward 
             if (Raylib.IsKeyDown(KeyboardKey.W))
                 movementInput += forward; // Move forward
 
             if (Raylib.IsKeyDown(KeyboardKey.S))
                 movementInput -= forward; // Move backward
 
-            // Calculate delta movement
+            //  delta movement
             Vector2 deltaMovement = movementInput * Speed * (float)deltaTime;
 
             // Update the tank's position
             Transform.LocalPosition += deltaMovement;
 
-            // Call base Update
-            base.Update(deltaTime);
 
 
-            // Debug visualization
+            // fwd vector
             Raylib.DrawLineV(
                 Transform.GlobalPosition,
                 Transform.GlobalPosition + forward * 20, // Scale forward vector for visualization
                 Color.Red
             );
 
-            // Draw the tank (simplified rectangle for visualization)
-           //   Raylib.DrawTextureV(texture, movementInput, Color.Green);
-                 // Size of the tank
+          
                 
            
 
             // Display collision count
-            Raylib.DrawText($"Collision Count: {CollisionCount}", 10, 60, 20, Color.White);
+            Raylib.DrawText($"Points count: {CollisionCount}", 10, 60, 20, Color.White);
         }
 
         public override void OnCollision(Actor other)

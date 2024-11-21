@@ -88,7 +88,7 @@ namespace MathForGamesDemo
         public void Run()
         {
        
-            Raylib.InitWindow(800, 480, "Hello World");
+            Raylib.InitWindow(1200, 880, "Hello World");
             
 
             // timing stuff
@@ -130,6 +130,10 @@ namespace MathForGamesDemo
 
             CurrentScene.End();
 
+            Raylib.CloseWindow();
+        }
+        public void End()
+        {
             Raylib.CloseWindow();
         }
     }

@@ -13,47 +13,54 @@ namespace MathForGamesDemo
 
     internal class TestScene : Scene
     {
-    Actor _paddle1;
-    Actor _paddle2;
-     Actor _ball;
+    Actor _twix1;
+    Actor thing;
+    Actor _tank;
        
 
         public override void Start()
         {
             base.Start();
 
-            // add our cool actor
-            Actor _paddle1 = new TestActor();
-            
-            _paddle1.Transform.LocalPosition = new Vector2(700,500);
-            AddActor(_paddle1);
+            Actor _yeezy = new TestActor2();
+            _yeezy.Transform.LocalPosition = new Vector2 (200,200);
+            _yeezy.AddComponent(new SpriteComponent(_yeezy, "C:\\dev\\MathForGamesDemo\\MathForGamesDemo\\src\\images\\yeezy.png"));
+            AddActor(_yeezy);
+                       
 
-            
+
+
+            Actor _twix1 = new TestActor();
+            _twix1.Transform.LocalPosition = new Vector2(500,400);
+            _twix1.AddComponent(new SpriteComponent(_twix1, "C:\\dev\\MathForGamesDemo\\MathForGamesDemo\\src\\images\\file.png"));
+            AddActor(_twix1);
+
+            Actor thing = new TestActor();
+            thing.Transform.LocalPosition = new Vector2(700, 300);
+            thing.AddComponent(new SpriteComponent(thing, "C:\\dev\\MathForGamesDemo\\MathForGamesDemo\\src\\images\\glep.png"));
+            AddActor(thing);
 
             Actor _tank = new Tank();
             _tank.Transform.LocalPosition = new Vector2(300, 500);
             _tank.AddComponent(new SpriteComponent(_tank, "C:\\dev\\MathForGamesDemo\\MathForGamesDemo\\src\\images\\kanye.png"));
             AddActor(_tank);
 
-            //paddle 2
-            Actor _paddle2 = new TestActor2();
-            _paddle2.Transform.LocalPosition = new Vector2(700, 300);
-            _paddle2.AddComponent(new SpriteComponent(_paddle2, "C:\\dev\\MathForGamesDemo\\MathForGamesDemo\\src\\images\\twix_bar_black.png"));
-            AddActor(_paddle2);
 
 
+            _yeezy.Collider = new CircleCollider(_yeezy, 20);
+            thing.Collider = new CircleCollider(thing, 50);
 
+            _twix1.Collider = new CircleCollider(_twix1, 50);
 
-            _paddle1.Collider = new CircleCollider(_paddle1, 50);
-
-            _paddle2.Collider = new CircleCollider(_paddle2, 50);
+       
 
             _tank.Collider = new CircleCollider(_tank, 20);
 
+            _yeezy = Actor.Instantiate(new Actor("yeezy"), null, new Vector2(200,200));
             _tank = Actor.Instantiate(new Actor("tank"), null, new Vector2(300,500));
-            
-            _paddle2 = Actor.Instantiate(new Actor("paddle 2"), null, new Vector2(700, 00), 0);
-            _paddle1 = Actor.Instantiate(new Actor("circle 1"), null, new Vector2(300, 500), 0);
+            thing = Actor.Instantiate(new Actor("thing"), null, new Vector2(700, 300));
+           
+            _twix1 = Actor.Instantiate(new Actor("circle 1"), null, new Vector2(300, 500), 0);
 
             
            

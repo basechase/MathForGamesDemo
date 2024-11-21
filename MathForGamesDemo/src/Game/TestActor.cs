@@ -14,31 +14,32 @@ namespace MathForGamesDemo
 {
     internal class TestActor : Actor
     {
-       
+        private Actor _player;
         public float Speed { get; set; } = 50;
 
        private Color _color = Color.White;
-        
-       private Vector2 movementInput = new Vector2();
+
+        private Vector2 _velocity;
+        private Vector2 _position;
 
         public override void Update(double deltaTime)
         {
-           Vector2 deltaMovement = movementInput.Normalized * Speed * (float)deltaTime;
+          
             base.Update(deltaTime);
-
-          
-          
-
-       
-
-
-
-
            
+            
+
+
+
+
+
+
+
+
 
         }
 
-
+       
 
         public override void OnCollision(Actor other)
         {
