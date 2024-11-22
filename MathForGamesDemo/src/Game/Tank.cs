@@ -26,7 +26,7 @@ namespace MathForGamesDemo
 
         public override void Update(double deltaTime)
         {
-            // Call base Update
+
             base.Update(deltaTime);
 
             // rotation 
