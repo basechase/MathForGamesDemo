@@ -27,15 +27,15 @@ namespace MathForGamesDemo
         {
           
             base.Update(deltaTime);
+
+
+
+
+
+
+
+
            
-            
-
-
-
-
-
-
-
 
 
         }

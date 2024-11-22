@@ -15,7 +15,7 @@ namespace MathForGamesDemo
         
         private Texture2D _texture;
         private string _path;
-        Sound kanye = Raylib.LoadSound("");
+       
         public SpriteComponent(Actor owner, string path = "") : base(owner)
         {
 
@@ -26,7 +26,7 @@ namespace MathForGamesDemo
         {
             base.Start();
                 
-            Raylib.InitAudioDevice();
+           
             _texture = Raylib.LoadTexture(_path);
         }
 

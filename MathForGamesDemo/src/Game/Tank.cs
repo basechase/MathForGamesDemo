@@ -91,10 +91,15 @@ namespace MathForGamesDemo
 
             // Display collision count
             Raylib.DrawText($"Baby Oil Bottles: {collisionCount}", 10, 60, 20, Color.White);
-
+            /*
             if (collisionCount >= 12)
             {
                 Raylib.CloseWindow();
+            }
+            */
+            if (collisionCount >= 12)
+            {
+                TestScene._gameWon = true;
             }
         }
 
@@ -102,7 +107,8 @@ namespace MathForGamesDemo
         {
                 
                 _collisionCount++;
-                _color = Color.Gold;
+                
+            
                 
             
         }

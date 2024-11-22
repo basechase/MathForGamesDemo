@@ -10,9 +10,10 @@ using Raylib_cs;
 
 namespace MathForGamesDemo
 {
-
+    
     internal class TestScene : Scene
     {
+    public static bool _gameWon = false;
     
        
 
@@ -126,10 +127,7 @@ namespace MathForGamesDemo
 
 
 
-            Actor thing = new TestActor();
-            thing.Transform.LocalPosition = new Vector2(700, 800);
-            thing.AddComponent(new SpriteComponent(thing, "C:\\dev\\MathForGamesDemo\\MathForGamesDemo\\src\\images\\glep.png"));
-            AddActor(thing);
+           
 
             Actor _tank = new Tank();
             _tank.Transform.LocalPosition = new Vector2(1100, 800);
@@ -170,7 +168,7 @@ namespace MathForGamesDemo
             _tape4.Collider = new CircleCollider(_tape4, 20);
             _tape5.Collider = new CircleCollider(_tape5, 20);
             //glep
-            thing.Collider = new CircleCollider(thing, 50);
+          
 
 
        
@@ -187,28 +185,53 @@ namespace MathForGamesDemo
             //instantiate actors
             _tape1 = Actor.Instantiate(new Actor("yeezy"), null, new Vector2(200,200));
             _tank = Actor.Instantiate(new Actor("tank"), null, new Vector2(300,500));
-            thing = Actor.Instantiate(new Actor("thing"), null, new Vector2(700, 300));
            
             _babyOil1 = Actor.Instantiate(new Actor("circle 1"), null, new Vector2(300, 500), 0);
+            _babyOil2 = Actor.Instantiate(new Actor("circle 1"), null, new Vector2(300, 500), 0);
+            _babyOil3 = Actor.Instantiate(new Actor("circle 1"), null, new Vector2(300, 500), 0);
+            _babyOil4 = Actor.Instantiate(new Actor("circle 1"), null, new Vector2(300, 500), 0);
+
+            _babyOil5 = Actor.Instantiate(new Actor("circle 1"), null, new Vector2(300, 500), 0);
+            _babyOil6 = Actor.Instantiate(new Actor("circle 1"), null, new Vector2(300, 500), 0);
+            _babyOil7 = Actor.Instantiate(new Actor("circle 1"), null, new Vector2(300, 500), 0);
+            _babyOil8 = Actor.Instantiate(new Actor("circle 1"), null, new Vector2(300, 500), 0);
+            _babyOil9 = Actor.Instantiate(new Actor("circle 1"), null, new Vector2(300, 500), 0);
+            _babyOil10 = Actor.Instantiate(new Actor("circle 1"), null, new Vector2(300, 500), 0);
+            _babyOil11 = Actor.Instantiate(new Actor("circle 1"), null, new Vector2(300, 500), 0);
+            _babyOil12 = Actor.Instantiate(new Actor("circle 1"), null, new Vector2(300, 500), 0);
 
 
 
 
-          
 
 
 
-            
-         
-            
 
-       
+
+
+
+
+
 
         }
 
 
+
+        
+
+        public override void End()
+        {
+            base.End();
+
+        }
+
         public override void Update(double deltaTime)
         {
+            if (_gameWon == true)
+            {
+                Raylib.ClearBackground(Color.White);
+                Raylib.DrawText("Game Over! Diddy Wins!", 285, 60, 20, Color.Black);
+            }
             
             base.Update(deltaTime);
             
