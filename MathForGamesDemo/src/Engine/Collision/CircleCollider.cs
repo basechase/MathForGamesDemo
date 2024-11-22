@@ -42,7 +42,7 @@ namespace MathForGamesDemo
         {
             base.Draw();
       
-            Raylib.DrawCircleLinesV(Owner.Transform.GlobalPosition, CollisionRadius, Color.Green);
+          // Raylib.DrawCircleLinesV(Owner.Transform.GlobalPosition, CollisionRadius, Color.Green);
            
         }
 

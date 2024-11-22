@@ -109,10 +109,11 @@ namespace MathForGamesDemo
                 currentTime = stopwatch.ElapsedMilliseconds;
 
 
+
+
                 
-
-
                 Raylib.BeginDrawing();
+                
                 Raylib.ClearBackground(Color.Black);
 
                 CurrentScene.Update(deltaTime);

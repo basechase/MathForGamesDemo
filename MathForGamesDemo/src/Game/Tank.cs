@@ -10,15 +10,16 @@ namespace MathForGamesDemo
 {
     internal class Tank : Actor
     {
-        public static int CollisionCount = 0;
-        public float Speed { get; set; } = 50;
-        public float RotationSpeed { get; set; } = 2f; // Radians per second
+        public static int collisionCount = 0;
+        private int _speed = 200;
+        private float _rotationSpeed  = 2f; 
         private Color _color = Color.Blue;
 
-        private float rotation = 0f; // Rotation in radians
+        private float rotation = 0f; // rotation in radian
         private Vector2 movementInput = new Vector2();
         private int _collisionCount;
         
+                
 
         public override void Update(double deltaTime)
         {
@@ -27,10 +28,10 @@ namespace MathForGamesDemo
 
             // rotation 
             if (Raylib.IsKeyDown(KeyboardKey.A))
-                rotation -= RotationSpeed * (float)deltaTime; // Rotate counterclockwise
+                rotation -= _rotationSpeed * (float)deltaTime; // rotate counterclockwise
 
             if (Raylib.IsKeyDown(KeyboardKey.D))
-                rotation += RotationSpeed * (float)deltaTime; // Rotate clockwise
+                rotation += _rotationSpeed * (float)deltaTime; // rotate clockwise
 
             // forward vector from rotation
             Vector2 forward = new Vector2(
@@ -49,37 +50,40 @@ namespace MathForGamesDemo
                 movementInput -= forward; // Move backward
 
             //  delta movement
-            Vector2 deltaMovement = movementInput * Speed * (float)deltaTime;
+            Vector2 deltaMovement = movementInput * _speed * (float)deltaTime;
 
-            // Update the tank's position
+           
             Transform.LocalPosition += deltaMovement;
 
 
-
+            /*
             // fwd vector
             Raylib.DrawLineV(
                 Transform.GlobalPosition,
-                Transform.GlobalPosition + forward * 20, // Scale forward vector for visualization
+                Transform.GlobalPosition + forward * 20, 
                 Color.Red
             );
-
+            */
           
                 
            
 
             // Display collision count
-            Raylib.DrawText($"Points count: {CollisionCount}", 10, 60, 20, Color.White);
+            Raylib.DrawText($"Baby Oil Bottles: {collisionCount}", 10, 60, 20, Color.White);
+
+            if (collisionCount >= 12)
+            {
+                Raylib.CloseWindow();
+            }
         }
 
         public override void OnCollision(Actor other)
         {
-            if (other != null)
-            {
-                
+            
                 _collisionCount++;
                 _color = Color.Gold;
                 
-            }
+            
         }
     }
 }

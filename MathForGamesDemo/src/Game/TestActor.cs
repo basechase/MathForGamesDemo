@@ -14,6 +14,7 @@ namespace MathForGamesDemo
 {
     internal class TestActor : Actor
     {
+       
         private Actor _player;
         public float Speed { get; set; } = 50;
 
@@ -43,7 +44,8 @@ namespace MathForGamesDemo
 
         public override void OnCollision(Actor other)
         {
-            Tank.CollisionCount++;
+           
+            Tank.collisionCount++;
             Actor.Destroy(this);
         }
 
