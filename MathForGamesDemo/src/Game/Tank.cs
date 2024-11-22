@@ -12,11 +12,14 @@ namespace MathForGamesDemo
     {
         public static int collisionCount = 0;
         private int _speed = 200;
+
         private float _rotationSpeed  = 2f; 
+
         private Color _color = Color.Blue;
 
-        private float rotation = 0f; // rotation in radian
+        private float rotation = 0f; // rotation in rads
         private Vector2 movementInput = new Vector2();
+
         private int _collisionCount;
         
                 
@@ -28,29 +31,47 @@ namespace MathForGamesDemo
 
             // rotation 
             if (Raylib.IsKeyDown(KeyboardKey.A))
+            {
+
                 rotation -= _rotationSpeed * (float)deltaTime; // rotate counterclockwise
 
+            }    
+
             if (Raylib.IsKeyDown(KeyboardKey.D))
+            {
+
                 rotation += _rotationSpeed * (float)deltaTime; // rotate clockwise
 
+            }
+
             // forward vector from rotation
-            Vector2 forward = new Vector2(
-                MathF.Cos(rotation),
-                MathF.Sin(rotation)
-            );
+            Vector2 forward = new Vector2(MathF.Cos(rotation), MathF.Sin(rotation));
+
+
 
             // reset movement input
             movementInput = new Vector2();
 
             // forward/backward 
             if (Raylib.IsKeyDown(KeyboardKey.W))
+            {
+
                 movementInput += forward; // Move forward
 
+            }
+
+
             if (Raylib.IsKeyDown(KeyboardKey.S))
+            {
+
                 movementInput -= forward; // Move backward
+
+            }
+
 
             //  delta movement
             Vector2 deltaMovement = movementInput * _speed * (float)deltaTime;
+
 
            
             Transform.LocalPosition += deltaMovement;
@@ -79,7 +100,7 @@ namespace MathForGamesDemo
 
         public override void OnCollision(Actor other)
         {
-            
+                
                 _collisionCount++;
                 _color = Color.Gold;
                 
