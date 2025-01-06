@@ -47,25 +47,25 @@ namespace MathForGamesDemo
 
             
             _tape1.Transform.LocalPosition = new Vector2 (200,200);
-            _tape1.AddComponent(new SpriteComponent(_tape1, "C:\\dev\\MathForGamesDemo\\MathForGamesDemo\\src\\images\\tape.png"));
+            _tape1.AddComponent(new SpriteComponent(_tape1, "images/tape.png"));
             AddActor(_tape1);
 
 
             _tape2.Transform.LocalPosition = new Vector2(400, 200);
-            _tape2.AddComponent(new SpriteComponent(_tape2, "C:\\dev\\MathForGamesDemo\\MathForGamesDemo\\src\\images\\tape.png"));
+            _tape2.AddComponent(new SpriteComponent(_tape2, "images/tape.png"));
             AddActor(_tape2);
 
             _tape3.Transform.LocalPosition = new Vector2(600, 200);
-            _tape3.AddComponent(new SpriteComponent(_tape3, "C:\\dev\\MathForGamesDemo\\MathForGamesDemo\\src\\images\\tape.png"));
+            _tape3.AddComponent(new SpriteComponent(_tape3, "images/tape.png"));
             AddActor(_tape3);
 
 
             _tape4.Transform.LocalPosition = new Vector2(800, 200);
-            _tape4.AddComponent(new SpriteComponent(_tape4, "C:\\dev\\MathForGamesDemo\\MathForGamesDemo\\src\\images\\tape.png"));
+            _tape4.AddComponent(new SpriteComponent(_tape4, "images/tape.png"));
             AddActor(_tape4);
 
             _tape5.Transform.LocalPosition = new Vector2(600, 400);
-            _tape5.AddComponent(new SpriteComponent(_tape5, "C:\\dev\\MathForGamesDemo\\MathForGamesDemo\\src\\images\\tape.png"));
+            _tape5.AddComponent(new SpriteComponent(_tape5, "images/tape.png"));
             AddActor(_tape5);
 
 
@@ -74,51 +74,51 @@ namespace MathForGamesDemo
 
 
             _babyOil1.Transform.LocalPosition = new Vector2(100, 100);
-            _babyOil1.AddComponent(new SpriteComponent(_babyOil1, "C:\\dev\\MathForGamesDemo\\MathForGamesDemo\\src\\images\\baby_oil_small.png"));
+            _babyOil1.AddComponent(new SpriteComponent(_babyOil1, "images/baby_oil_small.png"));
             AddActor(_babyOil1);
 
             _babyOil2.Transform.LocalPosition = new Vector2(300, 100);
-            _babyOil2.AddComponent(new SpriteComponent(_babyOil2, "C:\\dev\\MathForGamesDemo\\MathForGamesDemo\\src\\images\\baby_oil_small.png"));
+            _babyOil2.AddComponent(new SpriteComponent(_babyOil2, "images/baby_oil_small.png"));
             AddActor(_babyOil2);
 
             _babyOil3.Transform.LocalPosition = new Vector2(500, 100);
-            _babyOil3.AddComponent(new SpriteComponent(_babyOil3, "C:\\dev\\MathForGamesDemo\\MathForGamesDemo\\src\\images\\baby_oil_small.png"));
+            _babyOil3.AddComponent(new SpriteComponent(_babyOil3, "images\\baby_oil_small.png"));
             AddActor(_babyOil3);
 
             _babyOil4.Transform.LocalPosition = new Vector2(700, 100);
-            _babyOil4.AddComponent(new SpriteComponent(_babyOil4, "C:\\dev\\MathForGamesDemo\\MathForGamesDemo\\src\\images\\baby_oil_small.png"));
+            _babyOil4.AddComponent(new SpriteComponent(_babyOil4, "images\\baby_oil_small.png"));
             AddActor(_babyOil4);
 
             _babyOil5.Transform.LocalPosition = new Vector2(100, 300);
-            _babyOil5.AddComponent(new SpriteComponent(_babyOil5, "C:\\dev\\MathForGamesDemo\\MathForGamesDemo\\src\\images\\baby_oil_small.png"));
+            _babyOil5.AddComponent(new SpriteComponent(_babyOil5, "images\\baby_oil_small.png"));
             AddActor(_babyOil5);
 
             _babyOil6.Transform.LocalPosition = new Vector2(300, 300);
-            _babyOil6.AddComponent(new SpriteComponent(_babyOil6, "C:\\dev\\MathForGamesDemo\\MathForGamesDemo\\src\\images\\baby_oil_small.png"));
+            _babyOil6.AddComponent(new SpriteComponent(_babyOil6, "images\\baby_oil_small.png"));
             AddActor(_babyOil6);
 
             _babyOil7.Transform.LocalPosition = new Vector2(500, 300);
-            _babyOil7.AddComponent(new SpriteComponent(_babyOil7, "C:\\dev\\MathForGamesDemo\\MathForGamesDemo\\src\\images\\baby_oil_small.png"));
+            _babyOil7.AddComponent(new SpriteComponent(_babyOil7, "images\\baby_oil_small.png"));
             AddActor(_babyOil7);
 
             _babyOil8.Transform.LocalPosition = new Vector2(700, 300);
-            _babyOil8.AddComponent(new SpriteComponent(_babyOil8, "C:\\dev\\MathForGamesDemo\\MathForGamesDemo\\src\\images\\baby_oil_small.png"));
+            _babyOil8.AddComponent(new SpriteComponent(_babyOil8, "images\\baby_oil_small.png"));
             AddActor(_babyOil8);
 
             _babyOil9.Transform.LocalPosition = new Vector2(100, 500);
-            _babyOil9.AddComponent(new SpriteComponent(_babyOil9, "C:\\dev\\MathForGamesDemo\\MathForGamesDemo\\src\\images\\baby_oil_small.png"));
+            _babyOil9.AddComponent(new SpriteComponent(_babyOil9, "images\\baby_oil_small.png"));
             AddActor(_babyOil9);
 
             _babyOil10.Transform.LocalPosition = new Vector2(300, 500);
-            _babyOil10.AddComponent(new SpriteComponent(_babyOil10, "C:\\dev\\MathForGamesDemo\\MathForGamesDemo\\src\\images\\baby_oil_small.png"));
+            _babyOil10.AddComponent(new SpriteComponent(_babyOil10, "images\\baby_oil_small.png"));
             AddActor(_babyOil10);
 
             _babyOil11.Transform.LocalPosition = new Vector2(500, 500);
-            _babyOil11.AddComponent(new SpriteComponent(_babyOil11, "C:\\dev\\MathForGamesDemo\\MathForGamesDemo\\src\\images\\baby_oil_small.png"));
+            _babyOil11.AddComponent(new SpriteComponent(_babyOil11, "images\\baby_oil_small.png"));
             AddActor(_babyOil11);
 
             _babyOil12.Transform.LocalPosition = new Vector2(700, 500);
-            _babyOil12.AddComponent(new SpriteComponent(_babyOil12, "C:\\dev\\MathForGamesDemo\\MathForGamesDemo\\src\\images\\baby_oil_small.png"));
+            _babyOil12.AddComponent(new SpriteComponent(_babyOil12, "images\\baby_oil_small.png"));
             AddActor(_babyOil12);
 
 
@@ -131,7 +131,7 @@ namespace MathForGamesDemo
 
             Actor _tank = new Tank();
             _tank.Transform.LocalPosition = new Vector2(1100, 800);
-            _tank.AddComponent(new SpriteComponent(_tank, "C:\\dev\\MathForGamesDemo\\MathForGamesDemo\\src\\images\\diddy.png"));
+            _tank.AddComponent(new SpriteComponent(_tank, "images\\diddy.png"));
             AddActor(_tank);
 
 
