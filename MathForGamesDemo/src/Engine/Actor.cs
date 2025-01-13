@@ -396,8 +396,7 @@ namespace MathForGamesDemo
             }
             //trim the array
 
-            int newLength = Math.Max(0, _components.Length - _componentsToRemove.Length);
-            Component[] result = new Component[newLength];
+            Component[] result = new Component[_components.Length - _componentsToRemove.Length];
             for (int i = 0; i < result.Length; i++)
             {
                 result[i] = tempComponents[i];
